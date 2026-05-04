@@ -31,7 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build Quartz
-        run: npx quartz build
+        run: |
+          npx quartz build
+          python3 scripts/compat_trailing_slash.py
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
