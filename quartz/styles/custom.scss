@@ -4,3 +4,21 @@
   --headerFont: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --bodyFont: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
+
+/* Responsive images for article content, including mobile/trailing-slash pages */
+article img,
+.page article img,
+.center img,
+article p > img {
+  display: block;
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+  margin: 1rem auto;
+}
+
+article p:has(> img),
+.page article p:has(> img) {
+  overflow-x: auto;
+}
