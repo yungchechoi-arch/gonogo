@@ -1,157 +1,66 @@
 @use "./base.scss";
 
+/* 김과장 Quartz theme — conservative layer.
+ * Keep Quartz core layout intact; only adjust visual tokens and content styling.
+ */
 :root {
   --headerFont: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --bodyFont: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --kim-bg: #f4f7fb;
-  --kim-card: rgba(255, 255, 255, 0.82);
-  --kim-border: rgba(40, 75, 99, 0.14);
-  --kim-shadow: 0 18px 50px rgba(21, 39, 55, 0.10);
-  --kim-accent: #0f5c8c;
-  --kim-accent-2: #e49b36;
-  --kim-muted: #667788;
+  --kim-accent: #284b63;
+  --kim-accent-soft: rgba(40, 75, 99, 0.10);
+  --kim-gold: #c9892b;
+  --kim-border: rgba(40, 75, 99, 0.16);
 }
 
 :root[saved-theme="dark"] {
-  --kim-bg: #11161d;
-  --kim-card: rgba(24, 28, 36, 0.78);
-  --kim-border: rgba(123, 151, 170, 0.24);
-  --kim-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
-  --kim-accent: #7bbde8;
-  --kim-accent-2: #f2b65d;
-  --kim-muted: #aeb8c2;
-}
-
-html {
-  background:
-    radial-gradient(circle at 8% 0%, rgba(15, 92, 140, 0.16), transparent 30rem),
-    radial-gradient(circle at 96% 8%, rgba(228, 155, 54, 0.15), transparent 26rem),
-    var(--kim-bg);
+  --kim-accent: #8db4cc;
+  --kim-accent-soft: rgba(141, 180, 204, 0.12);
+  --kim-gold: #e0ac59;
+  --kim-border: rgba(141, 180, 204, 0.22);
 }
 
 body {
-  background: transparent !important;
+  letter-spacing: -0.012em;
 }
 
-.page {
-  max-width: 1540px;
-}
-
-.page>#quartz-body {
-  gap: 1.25rem !important;
-}
-
-.page>#quartz-body .sidebar {
-  padding-top: 3.5rem !important;
-}
-
-.page>#quartz-body .center,
-.page>#quartz-body footer {
-  min-width: 0;
-}
-
-.page-title a,
-.page-title {
-  letter-spacing: -0.04em;
+.page-title,
+.page-title a {
   font-weight: 800;
+  letter-spacing: -0.045em;
 }
 
-.page-title::after {
-  content: "EPC · Market · Notes";
-  display: block;
-  color: var(--kim-muted);
-  font-family: var(--bodyFont);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-top: 0.25rem;
+.article-title {
+  letter-spacing: -0.052em;
+  line-height: 1.2;
 }
 
-.search>.search-button,
-.explorer,
-.recent-notes,
-.graph>.graph-outer,
-.toc,
-.backlinks,
-.popover>.popover-inner {
-  border: 1px solid var(--kim-border) !important;
-  border-radius: 18px !important;
-  background: var(--kim-card) !important;
-  box-shadow: var(--kim-shadow);
-  backdrop-filter: blur(14px);
+.content-meta {
+  opacity: 0.82;
 }
 
+/* Subtle cards for side widgets only; no layout override. */
+.search > .search-button,
 .explorer,
 .recent-notes,
 .toc,
 .backlinks {
-  padding: 1rem;
+  border-color: var(--kim-border) !important;
+  border-radius: 12px;
 }
 
 .explorer h2,
-.recent-notes>h3,
-.graph>h3,
-.backlinks>h3,
+.recent-notes > h3,
+.graph > h3,
+.backlinks > h3,
 button.toc-header h3 {
   color: var(--kim-accent);
   font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
-.page>#quartz-body .page-header {
-  margin-top: 3.5rem !important;
-}
-
-article {
-  border: 1px solid var(--kim-border);
-  border-radius: 28px;
-  background: var(--kim-card);
-  box-shadow: var(--kim-shadow);
-  padding: clamp(1.2rem, 3vw, 2.4rem);
-  backdrop-filter: blur(14px);
-}
-
-.article-title {
-  margin-top: 0.5rem !important;
-  letter-spacing: -0.055em;
-  line-height: 1.18;
-}
-
-.page article>h1,
-.article-title h1,
-h1.article-title {
-  font-size: clamp(2rem, 4vw, 3.2rem) !important;
-}
-
-.content-meta {
-  color: var(--kim-muted) !important;
-  font-weight: 600;
-}
-
-.tags {
-  gap: 0.5rem;
-}
-
-a.internal.tag-link,
-.result-card>ul>li>p {
-  border: 1px solid rgba(15, 92, 140, 0.15);
-  border-radius: 999px !important;
-  background: color-mix(in srgb, var(--kim-accent) 10%, transparent) !important;
-  color: var(--kim-accent) !important;
-  font-weight: 800;
-}
-
-a {
-  text-underline-offset: 0.18em;
-}
-
-a:hover {
-  color: var(--kim-accent-2) !important;
-}
-
+/* Article content polish */
 article h2 {
-  border-left: 5px solid var(--kim-accent);
-  padding-left: 0.75rem;
+  border-left: 4px solid var(--kim-accent);
+  padding-left: 0.7rem;
   letter-spacing: -0.04em;
 }
 
@@ -159,36 +68,72 @@ article h3 {
   letter-spacing: -0.03em;
 }
 
-blockquote,
-.callout {
-  border-radius: 18px !important;
-  border-left-width: 5px !important;
-  background: color-mix(in srgb, var(--kim-accent) 7%, transparent) !important;
+blockquote {
+  border-left: 4px solid var(--kim-gold);
+  background: var(--kim-accent-soft);
+  border-radius: 0 10px 10px 0;
 }
 
-.table-container>table {
-  width: 100%;
+a.internal.tag-link,
+.result-card > ul > li > p {
   border: 1px solid var(--kim-border);
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--kim-card);
+  border-radius: 999px !important;
+  background: var(--kim-accent-soft) !important;
+  color: var(--kim-accent) !important;
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--kim-gold) !important;
+}
+
+.table-container > table {
+  width: 100%;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  border: 1px solid var(--kim-border);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th {
-  background: color-mix(in srgb, var(--kim-accent) 13%, transparent);
+  background: var(--kim-accent-soft);
   color: var(--dark);
 }
 
 pre,
 code {
-  border-radius: 12px !important;
+  border-radius: 8px !important;
 }
 
-footer {
-  border-top: 1px solid var(--kim-border);
-  padding-top: 1rem;
+/* Visible GoatCounter visitor widget */
+.visitor-count-wrap {
+  margin: 1.5rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--kim-border);
+  border-radius: 12px;
+  background: var(--kim-accent-soft);
+  color: var(--darkgray);
+  font-size: 0.9rem;
+}
+
+.visitor-count-title {
+  font-weight: 800;
+  color: var(--kim-accent);
+  margin-bottom: 0.4rem;
+}
+
+#visitor-count,
+#visitor-total-count {
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+
+#visitor-count > div,
+#visitor-total-count > div {
+  transform-origin: left top;
+  transform: scale(0.78);
+  margin-bottom: -0.75rem;
 }
 
 /* Responsive images for article content, including mobile/trailing-slash pages */
@@ -202,26 +147,10 @@ article p > img {
   height: auto !important;
   object-fit: contain;
   margin: 1rem auto;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(21, 39, 55, 0.10);
+  border-radius: 8px;
 }
 
 article p:has(> img),
 .page article p:has(> img) {
   overflow-x: auto;
-}
-
-@media (max-width: 800px) {
-  .page>#quartz-body .sidebar.left {
-    padding-top: 1rem !important;
-  }
-
-  article {
-    border-radius: 20px;
-    padding: 1.1rem;
-  }
-
-  .page-title::after {
-    display: none;
-  }
 }
