@@ -22,35 +22,3 @@ article p:has(> img),
 .page article p:has(> img) {
   overflow-x: auto;
 }
-
-/* Minimal visible visitor counter. Keep layout untouched. */
-.visitor-count-wrap {
-  margin: 1.5rem 0 0;
-  padding: 0.75rem 0;
-  border-top: 1px solid var(--lightgray);
-  color: var(--darkgray);
-  font-size: 0.9rem;
-}
-
-.visitor-count-title {
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.visitor-count-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.25rem 0.75rem;
-  align-items: baseline;
-  max-width: 18rem;
-}
-
-.visitor-count-grid strong {
-  color: var(--secondary);
-}
-
-.visitor-count-note {
-  margin-top: 0.35rem;
-  color: var(--gray);
-  font-size: 0.78rem;
-}
