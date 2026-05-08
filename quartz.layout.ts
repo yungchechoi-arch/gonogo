@@ -8,8 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/yungchechoi-arch",
     },
   }),
 }
@@ -38,10 +37,34 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "카테고리",
+      folderClickBehavior: "link",
+      folderDefaultState: "open",
+      sortFn: (a, b) => {
+        if ((!a.file && !b.file) || (a.file && b.file)) {
+          return a.displayName.localeCompare(b.displayName, "ko")
+        }
+        if (a.file && !b.file) return 1
+        return -1
+      },
+    }),
+    Component.RecentNotes({
+      title: "최근 글",
+      limit: 5,
+      showTags: false,
+      linkToMore: "tags/" as any,
+    }),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      localGraph: {
+        showTags: false,
+      },
+      globalGraph: {
+        showTags: false,
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -62,7 +85,14 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "카테고리",
+    }),
+    Component.RecentNotes({
+      title: "최근 글",
+      limit: 5,
+      showTags: false,
+    }),
   ],
   right: [],
 }

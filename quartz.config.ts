@@ -13,7 +13,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "goatcounter",
+      websiteId: "gonogo",
     },
     locale: "ko-KR",
     baseUrl: "yungchechoi-arch.github.io/gonogo",
