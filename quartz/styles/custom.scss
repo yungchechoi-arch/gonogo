@@ -123,17 +123,26 @@ code {
   margin-bottom: 0.4rem;
 }
 
-#visitor-count,
-#visitor-total-count {
-  display: inline-block;
-  margin-right: 0.75rem;
+.visitor-count-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
 }
 
-#visitor-count > div,
-#visitor-total-count > div {
-  transform-origin: left top;
-  transform: scale(0.78);
-  margin-bottom: -0.75rem;
+.visitor-count-grid span {
+  color: var(--darkgray);
+}
+
+.visitor-count-grid strong {
+  color: var(--kim-accent);
+  font-size: 1.05rem;
+}
+
+.visitor-count-note {
+  margin-top: 0.45rem;
+  color: var(--gray);
+  font-size: 0.78rem;
 }
 
 /* Responsive images for article content, including mobile/trailing-slash pages */

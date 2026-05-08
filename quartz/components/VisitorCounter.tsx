@@ -2,50 +2,67 @@ import { QuartzComponent } from "./types"
 
 const VisitorCounter: QuartzComponent = () => {
   return (
-    <div class="visitor-count-wrap">
+    <div class="visitor-count-wrap" aria-live="polite">
       <div class="visitor-count-title">📊 방문 카운터</div>
-      <div id="visitor-count">이 페이지 조회수 불러오는 중…</div>
-      <div id="visitor-total-count">전체 방문수 불러오는 중…</div>
+      <div class="visitor-count-grid">
+        <span>이 페이지</span>
+        <strong id="visitor-count">불러오는 중…</strong>
+        <span>전체</span>
+        <strong id="visitor-total-count">불러오는 중…</strong>
+      </div>
+      <div id="visitor-count-note" class="visitor-count-note"></div>
     </div>
   )
 }
 
 VisitorCounter.afterDOMLoaded = `
 (function () {
-  function renderFallback() {
-    const page = document.querySelector('#visitor-count')
-    const total = document.querySelector('#visitor-total-count')
-    if (page && page.textContent && page.textContent.includes('불러오는 중')) page.textContent = '이 페이지 조회수: 준비 중'
-    if (total && total.textContent && total.textContent.includes('불러오는 중')) total.textContent = '전체 방문수: 준비 중'
+  const base = 'https://gonogo.goatcounter.com/counter/'
+
+  function counterPath(path) {
+    if (path === 'TOTAL') return 'TOTAL.json'
+    return encodeURIComponent(path) + '.json'
   }
 
-  function attachCounters() {
-    if (!window.goatcounter || !window.goatcounter.visit_count) return false
-    const page = document.querySelector('#visitor-count')
-    const total = document.querySelector('#visitor-total-count')
-    if (!page || !total) return true
-    page.textContent = ''
-    total.textContent = ''
+  function setText(sel, text) {
+    const el = document.querySelector(sel)
+    if (el) el.textContent = text
+  }
+
+  function compact(n) {
+    if (!n) return '0'
+    return String(n)
+  }
+
+  async function fetchCount(path) {
+    const res = await fetch(base + counterPath(path), { mode: 'cors', cache: 'no-store' })
+    if (!res.ok) throw new Error('counter disabled or unavailable: ' + res.status)
+    const data = await res.json()
+    return data.count || data.count_unique || '0'
+  }
+
+  async function renderCounters() {
+    const cleanPath = window.location.pathname
     try {
-      window.goatcounter.visit_count({ append: '#visitor-count', no_branding: true })
-      window.goatcounter.visit_count({ append: '#visitor-total-count', path: 'TOTAL', no_branding: true })
+      const pageCount = await fetchCount(cleanPath)
+      setText('#visitor-count', compact(pageCount))
     } catch (e) {
-      renderFallback()
+      setText('#visitor-count', '설정 필요')
     }
-    return true
+
+    try {
+      const totalCount = await fetchCount('TOTAL')
+      setText('#visitor-total-count', compact(totalCount))
+      setText('#visitor-count-note', '')
+    } catch (e) {
+      setText('#visitor-total-count', '설정 필요')
+      setText('#visitor-count-note', 'GoatCounter에서 visitor counter 허용 옵션을 켜면 숫자가 표시됩니다.')
+    }
   }
 
-  let tries = 0
-  const timer = window.setInterval(function () {
-    tries += 1
-    if (attachCounters() || tries > 80) {
-      window.clearInterval(timer)
-      if (tries > 80) renderFallback()
-    }
-  }, 150)
-
+  renderCounters()
   document.addEventListener('nav', function () {
-    window.setTimeout(attachCounters, 250)
+    window.setTimeout(renderCounters, 250)
   })
 })()
 `
