@@ -22,3 +22,37 @@ article p:has(> img),
 .page article p:has(> img) {
   overflow-x: auto;
 }
+
+/* Mobile layout fix: show content before the long sidebar/explorer list. */
+@media all and (max-width: 800px) {
+  .page > #quartz-body {
+    grid-template-areas:
+      "grid-center"
+      "grid-sidebar-left"
+      "grid-sidebar-right"
+      "grid-footer" !important;
+  }
+
+  .page > #quartz-body > .center {
+    grid-area: grid-center;
+    min-width: 0;
+  }
+
+  .page > #quartz-body > .left.sidebar {
+    grid-area: grid-sidebar-left;
+  }
+
+  .page > #quartz-body > .right.sidebar {
+    grid-area: grid-sidebar-right;
+  }
+}
+
+.footer-visit-counter {
+  color: var(--darkgray);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.footer-visit-counter strong {
+  color: var(--secondary);
+}
