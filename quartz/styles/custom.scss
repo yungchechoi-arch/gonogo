@@ -1,148 +1,8 @@
 @use "./base.scss";
 
-/* 김과장 Quartz theme — conservative layer.
- * Keep Quartz core layout intact; only adjust visual tokens and content styling.
- */
 :root {
   --headerFont: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --bodyFont: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --kim-accent: #284b63;
-  --kim-accent-soft: rgba(40, 75, 99, 0.10);
-  --kim-gold: #c9892b;
-  --kim-border: rgba(40, 75, 99, 0.16);
-}
-
-:root[saved-theme="dark"] {
-  --kim-accent: #8db4cc;
-  --kim-accent-soft: rgba(141, 180, 204, 0.12);
-  --kim-gold: #e0ac59;
-  --kim-border: rgba(141, 180, 204, 0.22);
-}
-
-body {
-  letter-spacing: -0.012em;
-}
-
-.page-title,
-.page-title a {
-  font-weight: 800;
-  letter-spacing: -0.045em;
-}
-
-.article-title {
-  letter-spacing: -0.052em;
-  line-height: 1.2;
-}
-
-.content-meta {
-  opacity: 0.82;
-}
-
-/* Subtle cards for side widgets only; no layout override. */
-.search > .search-button,
-.explorer,
-.recent-notes,
-.toc,
-.backlinks {
-  border-color: var(--kim-border) !important;
-  border-radius: 12px;
-}
-
-.explorer h2,
-.recent-notes > h3,
-.graph > h3,
-.backlinks > h3,
-button.toc-header h3 {
-  color: var(--kim-accent);
-  font-weight: 800;
-}
-
-/* Article content polish */
-article h2 {
-  border-left: 4px solid var(--kim-accent);
-  padding-left: 0.7rem;
-  letter-spacing: -0.04em;
-}
-
-article h3 {
-  letter-spacing: -0.03em;
-}
-
-blockquote {
-  border-left: 4px solid var(--kim-gold);
-  background: var(--kim-accent-soft);
-  border-radius: 0 10px 10px 0;
-}
-
-a.internal.tag-link,
-.result-card > ul > li > p {
-  border: 1px solid var(--kim-border);
-  border-radius: 999px !important;
-  background: var(--kim-accent-soft) !important;
-  color: var(--kim-accent) !important;
-  font-weight: 700;
-}
-
-a:hover {
-  color: var(--kim-gold) !important;
-}
-
-.table-container > table {
-  width: 100%;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  border: 1px solid var(--kim-border);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-th {
-  background: var(--kim-accent-soft);
-  color: var(--dark);
-}
-
-pre,
-code {
-  border-radius: 8px !important;
-}
-
-/* Visible GoatCounter visitor widget */
-.visitor-count-wrap {
-  margin: 1.5rem 0 0;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--kim-border);
-  border-radius: 12px;
-  background: var(--kim-accent-soft);
-  color: var(--darkgray);
-  font-size: 0.9rem;
-}
-
-.visitor-count-title {
-  font-weight: 800;
-  color: var(--kim-accent);
-  margin-bottom: 0.4rem;
-}
-
-.visitor-count-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.35rem 0.75rem;
-  align-items: baseline;
-}
-
-.visitor-count-grid span {
-  color: var(--darkgray);
-}
-
-.visitor-count-grid strong {
-  color: var(--kim-accent);
-  font-size: 1.05rem;
-}
-
-.visitor-count-note {
-  margin-top: 0.45rem;
-  color: var(--gray);
-  font-size: 0.78rem;
 }
 
 /* Responsive images for article content, including mobile/trailing-slash pages */
@@ -156,10 +16,41 @@ article p > img {
   height: auto !important;
   object-fit: contain;
   margin: 1rem auto;
-  border-radius: 8px;
 }
 
 article p:has(> img),
 .page article p:has(> img) {
   overflow-x: auto;
+}
+
+/* Minimal visible visitor counter. Keep layout untouched. */
+.visitor-count-wrap {
+  margin: 1.5rem 0 0;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--lightgray);
+  color: var(--darkgray);
+  font-size: 0.9rem;
+}
+
+.visitor-count-title {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.visitor-count-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  align-items: baseline;
+  max-width: 18rem;
+}
+
+.visitor-count-grid strong {
+  color: var(--secondary);
+}
+
+.visitor-count-note {
+  margin-top: 0.35rem;
+  color: var(--gray);
+  font-size: 0.78rem;
 }
