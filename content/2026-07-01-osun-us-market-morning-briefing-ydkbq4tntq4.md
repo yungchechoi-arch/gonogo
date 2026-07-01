@@ -32,7 +32,9 @@ description: "오선 미국증시 영상 기반으로 지수, 반도체, 🛒 �
 ## 시장 포인트: 지수, 반도체, 🛒 소비/고용
 
 
-> Finviz 히트맵 캡처는 이번 복구 실행에서 확보하지 못했습니다. 다음 자동 실행에서 재시도합니다.
+![Finviz 당일 미국증시 히트맵](https://yungchechoi-arch.github.io/gonogo/images/2026-07-01-finviz-heatmap-ydkbq4tntq4.png)
+
+*Figure: Finviz 당일 미국증시 히트맵. 섹터별 강약을 빠르게 확인하기 위한 참고용 화면입니다. (출처: Finviz)*
 
 
 ### 지수
