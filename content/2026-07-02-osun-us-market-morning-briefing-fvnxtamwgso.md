@@ -32,9 +32,7 @@ description: "오선 미국증시 영상 기반으로 S&P500 내 다수 기업�
 ## 시장 포인트: S&P500 내 다수 기업은 상승했지만, 반도체 최주 부진이 지수 전체에 부담으로 작용했습니다., 메타, 반도체/AI 인프라
 
 
-![Finviz 당일 미국증시 히트맵](https://yungchechoi-arch.github.io/gonogo/images/2026-07-02-finviz-heatmap-fvnxtamwgso.png)
-
-*Figure: Finviz 당일 미국증시 히트맵. 섹터별 강약을 빠르게 확인하기 위한 참고용 화면입니다. (출처: Finviz)*
+> Finviz 히트맵 캡처는 이번 복구 실행에서 확보하지 못했습니다. 다음 자동 실행에서 재시도합니다.
 
 
 - S&P500 내 다수 기업은 상승했지만, 반도체 최주 부진이 지수 전체에 부담으로 작용했습니다.
