@@ -30,7 +30,9 @@ description: "오선 미국증시 영상 기반으로 다우 신고가에도 웃
 ## 시장 포인트: 다우 신고가에도 웃지 못한 시장…AI 반도체 재평가 시작?
 
 
-> Finviz 히트맵 캡처는 이번 복구 실행에서 확보하지 못했습니다. 다음 자동 실행에서 재시도합니다.
+![Finviz 당일 미국증시 히트맵](https://yungchechoi-arch.github.io/gonogo/images/2026-07-03-finviz-heatmap-ewa-ro4xkim.png)
+
+*Figure: Finviz 당일 미국증시 히트맵. 섹터별 강약을 빠르게 확인하기 위한 참고용 화면입니다. (출처: Finviz)*
 
 
 이번 영상 기준 주요 시장 포인트는 제한적으로 확인됐습니다.
