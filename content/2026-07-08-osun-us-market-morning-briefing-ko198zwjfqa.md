@@ -32,9 +32,7 @@ description: "오선 미국증시 영상 기반으로 반도체 약세, 🧾 실
 ## 시장 포인트: 반도체 약세, 🧾 실적 시즌 리스크, 🏗️ 하이퍼스케일러
 
 
-![Finviz 당일 미국증시 히트맵](https://yungchechoi-arch.github.io/gonogo/images/2026-07-08-finviz-heatmap-ko198zwjfqa.png)
-
-*Figure: Finviz 당일 미국증시 히트맵. 섹터별 강약을 빠르게 확인하기 위한 참고용 화면입니다. (출처: Finviz)*
+> Finviz 히트맵 캡처는 이번 복구 실행에서 확보하지 못했습니다. 다음 자동 실행에서 재시도합니다.
 
 
 ### 반도체 약세
