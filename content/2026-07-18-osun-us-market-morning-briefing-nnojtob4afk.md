@@ -30,17 +30,11 @@ description: "오선 미국증시 영상 기반으로 나스닥, 🔻 반도체,
 - 나스닥 -1.5%, 필라델피아 반도체지수는 고점 대비 -20%로 약세장 진입.
 
 
-![오늘의 시장 주제 AI 이미지](https://yungchechoi-arch.github.io/gonogo/images/2026-07-18-osun-us-market-morning-briefing-nnojtob4afk-topic.png)
-
-*Figure: 오늘 영상 주제를 바탕으로 생성한 AI 이미지입니다. 시장 분위기와 핵심 테마를 시각화하기 위한 참고용 illustration입니다.*
-
 
 ## 시장 포인트: 나스닥, 🔻 반도체, 필라델피아 반도체지수
 
 
-![Finviz 당일 미국증시 히트맵](https://yungchechoi-arch.github.io/gonogo/images/2026-07-18-finviz-heatmap-nnojtob4afk.png)
-
-*Figure: Finviz 당일 미국증시 히트맵. 섹터별 강약을 빠르게 확인하기 위한 참고용 화면입니다. (출처: Finviz)*
+> Finviz 히트맵 캡처는 이번 복구 실행에서 확보하지 못했습니다. 다음 자동 실행에서 재시도합니다.
 
 
 ### 나스닥
