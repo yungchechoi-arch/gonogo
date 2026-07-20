@@ -30,10 +30,6 @@ description: "오선 미국증시 영상 기반으로 S&P500, 유가, 🧾 채�
 - 💾 반도체주는 약세장 진입 후 반등, 이번 주 빅테크 실적이 핵심 변수.
 
 
-![오늘의 시장 주제 AI 이미지](https://yungchechoi-arch.github.io/gonogo/images/2026-07-21-osun-us-market-morning-briefing-89ank_lsh-g-topic.png)
-
-*Figure: 오늘 영상 주제를 바탕으로 생성한 AI 이미지입니다. 시장 분위기와 핵심 테마를 시각화하기 위한 참고용 illustration입니다.*
-
 
 ## 시장 포인트: S&P500, 유가, 🧾 채권
 
