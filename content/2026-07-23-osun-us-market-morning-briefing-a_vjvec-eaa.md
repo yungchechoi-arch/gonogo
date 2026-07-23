@@ -30,10 +30,6 @@ description: "오선 미국증시 영상 기반으로 S&P500, 필라델피아 �
 - 호르무즈 긴장으로 브렌트유 95달러 돌파 → 인플레·국채금리 부담 확대.
 
 
-![오늘의 시장 주제 AI 이미지](https://yungchechoi-arch.github.io/gonogo/images/2026-07-23-osun-us-market-morning-briefing-a_vjvec-eaa-topic.png)
-
-*Figure: 오늘 영상 주제를 바탕으로 생성한 AI 이미지입니다. 시장 분위기와 핵심 테마를 시각화하기 위한 참고용 illustration입니다.*
-
 
 ## 시장 포인트: S&P500, 필라델피아 반도체지수, ☁️ 구글
 
