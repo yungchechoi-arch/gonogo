@@ -38,7 +38,9 @@ description: "오선 미국증시 영상 기반으로 고용, 노동시장, 연�
 ## 시장 포인트: 고용, 노동시장, 연준
 
 
-> Finviz 히트맵 캡처는 이번 복구 실행에서 확보하지 못했습니다. 다음 자동 실행에서 재시도합니다.
+![Finviz 당일 미국증시 히트맵](https://yungchechoi-arch.github.io/gonogo/images/2026-08-08-finviz-heatmap-myw7pbz0z80.png)
+
+*Figure: Finviz 당일 미국증시 히트맵. 섹터별 강약을 빠르게 확인하기 위한 참고용 화면입니다. (출처: Finviz)*
 
 
 ### 고용
