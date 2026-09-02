@@ -28,6 +28,10 @@ description: "오선 미국증시 영상 기반으로 미·이란 다시 충돌�
 - 미국장은 주요 이벤트를 소화하며 변동성을 보였습니다.
 
 
+![오늘의 시장 주제 이미지](https://yungchechoi-arch.github.io/gonogo/images/2026-09-02-osun-us-market-morning-briefing-n1hqto_njh0-topic.png)
+
+*Figure: 오늘 시장 분위기와 핵심 테마를 한눈에 보기 위한 참고 이미지입니다.*
+
 
 ## 시장 포인트: 미·이란 다시 충돌…유가 90달러 돌파에 ‘9월 금리인상’ 공포
 
